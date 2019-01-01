@@ -1662,7 +1662,7 @@ parse_panel_size (WPanel * panel, const char *format, gboolean isstatus)
 
 /* --------------------------------------------------------------------------------------------- */
 
-/* *INDENT_OFF* */
+/* *INDENT-OFF* */
 /* Format is:
 
    all              := panel_format? format
@@ -1677,7 +1677,7 @@ parse_panel_size (WPanel * panel, const char *format, gboolean isstatus)
    opt_expand        := +
 
  */
-/* *INDENT_ON* */
+/* *INDENT-ON* */
 
 static GSList *
 parse_display_format (WPanel * panel, const char *format, char **error, gboolean isstatus,
