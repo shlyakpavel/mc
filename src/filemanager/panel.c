@@ -4359,7 +4359,9 @@ panel_new_sized_with_dir (const char *panel_name, int y, int x, int lines, int c
 {
     WPanel *panel;
     char *curdir = NULL;
+#ifdef HAVE_CHARSET
     const vfs_path_element_t *path_element;
+#endif
 
     panel = panel_new_sized_empty (panel_name, y, x, lines, cols);
 
@@ -4405,6 +4407,7 @@ panel_new_sized_with_dir (const char *panel_name, int y, int x, int lines, int c
         tmp_vpath = vfs_path_from_str (curdir);
         err = mc_chdir (tmp_vpath);
         vfs_path_free (tmp_vpath);
+        (void) err;
     }
     g_free (curdir);
 
