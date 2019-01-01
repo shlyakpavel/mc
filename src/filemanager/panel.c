@@ -1510,14 +1510,6 @@ panel_destroy (WPanel * p)
 
 /* --------------------------------------------------------------------------------------------- */
 
-static inline void
-panel_format_modified (WPanel * panel)
-{
-    panel->format_modified = 1;
-}
-
-/* --------------------------------------------------------------------------------------------- */
-
 static void
 panel_paint_sort_info (const WPanel * panel)
 {
@@ -4331,7 +4323,6 @@ panel_new_with_dir (const char *panel_name, const vfs_path_t * vpath)
     panel->is_panelized = FALSE;
     panel->format = NULL;
     panel->status_format = NULL;
-    panel->format_modified = 1;
     panel->content_shift = -1;
     panel->max_shift = -1;
 
@@ -4480,7 +4471,6 @@ set_panel_formats (WPanel * p)
         }
     }
 
-    panel_format_modified (p);
     panel_update_cols (WIDGET (p), p->frame_size);
 
     if (retcode)
