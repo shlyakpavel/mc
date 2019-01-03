@@ -866,8 +866,7 @@ try_complete_commands_prepare (try_complete_automation_state_t * state, char *te
 
             /* Quoted */
             if ((this_char == '&' && (prev_char == '<' || prev_char == '>'))
-                || (this_char == '|' && prev_char == '>') || (ti != text
-                                                              && str_get_prev_char (ti)[0] == '\\'))
+                || (this_char == '|' && prev_char == '>') || str_get_prev_char (ti)[0] == '\\')
                 state->in_command_position = 0;
         }
     }
